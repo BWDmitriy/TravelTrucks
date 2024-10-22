@@ -10,11 +10,11 @@ button.search {
   padding: 16px 60px;
   width: 166px;
   height: 56px;
-  background-color: var(--red);
+  background-color: var(--button);
 }
 
 button.search:hover {
-  background-color: var(--red-hover);
+  background-color: var(--button-hover);
 }
 
 button.load-more {
@@ -26,5 +26,5 @@ height: 56px;
 }
 
 button.load-more:hover {
-  border: 1px solid var(--red-hover);
+  border: 1px solid var(--button-hover);
 }

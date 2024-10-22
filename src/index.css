@@ -12,6 +12,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --main: #101828;
+  --text: #475467;
+  --white: #fff;
+  --inputs: #f7f7f7;
+  --badges: #f2f4f7;
+  --gray: #6c717b;
+  --gray-light: #dadde1;
+  --button: #e44848;
+  --button-hover: #d84343;
+  --rating: #ffc531;
 }
 
 /* Reset styles */
@@ -60,30 +70,12 @@ input {
 }
 
 /* common styles */
-a {
-  font-weight: 400;
-}
-
-a:hover {
-  text-decoration: none;
-}
 
 body {
-  font-family: "Roboto", sans-serif;
   line-height: 1.5;
   margin: 0 auto;
   width: 320px;
-
-  --dark: #101828;
-  --darkgrey: #475467;
-  --grey: #6C717B;
-  --red: #E44848;
-  --red-hover: #D84343;
-  --yellow: #FFC531;
-  --lightgrey: #DADDE1;
-  --white-a: #F2F4F7;
-  --white-b: #F7F7F7;
-  --white: #FFFFFF;
+  color: var(--main);
 }
 
 
@@ -99,3 +91,15 @@ body {
   }
 }
 
+
+input {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+}
+
+input:focus { 
+  color: var(--main);
+}
