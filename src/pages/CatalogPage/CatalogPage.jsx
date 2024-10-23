@@ -1,7 +1,25 @@
 // src/pages/CatalogPage.jsx
+import { useEffect, useState } from 'react';
+import CamperDetailPage from '../CamperDetailPage/CamperDetailPage';
 import './CatalogPage.css';
 
 function CatalogPage() {
+  const [campers, setCampers] = useState([]); // Initialize as an empty array
+
+const fetchCampers = () => {
+  fetch('https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers')
+    .then((response) => response.json())
+    .then((data) => {
+      console.log('Fetched campers:', data); // Log the data
+      setCampers(data);
+    })
+    .catch((error) => console.error('Error fetching campers:', error));
+  };
+  
+  useEffect(() => {
+    fetchCampers();
+  }, []);
+
   return (
     <div className="catalog-page">
       <div className="catalog-sidebar">
@@ -9,7 +27,7 @@ function CatalogPage() {
           <div className="location-text">Location</div>
           <div className="location-detail">
             <svg className="icon">
-              <use xlinkHref="#icon-map"></use>
+              <use xlinkHref="../../assets/symbol-defs.svg#icon-map"></use>
             </svg>
             Kyiv, Ukraine
           </div>
@@ -71,9 +89,10 @@ function CatalogPage() {
             </button>
           </div>
         </div>
+        <button className="search-button" onClick={fetchCampers}>Search</button>
       </div>
       <div className="catalog-list">
-        {/* Camper items will be displayed here */}
+       <CamperDetailPage campers={campers} />
       </div>
     </div>
   );
