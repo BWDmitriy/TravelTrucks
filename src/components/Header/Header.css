@@ -1,0 +1,35 @@
+/* src/components/Header.css */
+
+.header {
+  border-bottom: 1px solid var(--badges);
+  padding: 24px 64px;
+  width: 1440px;
+  height: 72px;
+  background-color: var(--inputs);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  height: 100%; 
+}
+
+.header-nav {
+  display: flex;
+  gap: 20px; 
+}
+
+.header-link {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--main);
+  text-decoration: none; 
+}
+
+.header-link:hover, .header-link:active {
+  color: var(--button-hover);
+}

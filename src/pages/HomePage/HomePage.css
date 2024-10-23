@@ -1,0 +1,48 @@
+/* src/pages/HomePage.css */
+.home-page {
+  background-image: url('../../assets/Picture.jpg'); /* Adjust the path if necessary */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 64px; /* Adjust padding as needed */
+}
+
+.home-content {
+  color: var(--inputs);
+}
+
+.home-content h1 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 67%;
+  margin-bottom: 16px; /* Adjust spacing as needed */
+}
+
+.home-content h2 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  margin-bottom: 32px; /* Adjust spacing as needed */
+}
+
+.view-now-button {
+  /* Assuming standard styles are defined in index.css */
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-now-button:hover {
+  background-color: var(--button-hover);
+}

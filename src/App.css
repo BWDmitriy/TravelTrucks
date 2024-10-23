@@ -28,3 +28,12 @@ height: 56px;
 button.load-more:hover {
   border: 1px solid var(--button-hover);
 }
+
+.categories {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--main);
+}
