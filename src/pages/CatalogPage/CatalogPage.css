@@ -1,0 +1,80 @@
+/* src/pages/CatalogPage.css */
+.catalog-page {
+  display: flex;
+}
+
+.catalog-sidebar {
+  width: 360px;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.location-text,
+.filters-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.location-detail {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+}
+
+.location-detail .icon {
+  margin-right: 8px;
+}
+
+.filters h2 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  margin: 16px 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-button:hover {
+  background-color: #e0e0e0;
+}
+
+.filter-button .icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 8px;
+}
+
+.catalog-list {
+  flex-grow: 1;
+  padding: 20px;
+  /* Camper items styling will go here */
+}

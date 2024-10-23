@@ -20,6 +20,7 @@
   gap: 20px; 
 }
 
+/* src/components/Header.css */
 .header-link {
   font-family: var(--font-family);
   font-weight: 500;
@@ -27,9 +28,13 @@
   line-height: 150%;
   text-align: center;
   color: var(--main);
-  text-decoration: none; 
+  text-decoration: none;
 }
 
-.header-link:hover, .header-link:active {
+.header-link:hover {
+  color: var(--button-hover);
+}
+
+.active-link {
   color: var(--button-hover);
 }
