@@ -34,7 +34,7 @@ function CamperDetailPage({ campers = [] }) { // Default to an empty array
             </div>
             <p className="camper-text">{camper.description}</p>
             <ul className="camper-features">
-              {camper.features.map((feature, index) => (
+              {(camper.features || []).map((feature, index) => ( // Default to an empty array
                 <li key={index}>{feature}</li>
               ))}
             </ul>
