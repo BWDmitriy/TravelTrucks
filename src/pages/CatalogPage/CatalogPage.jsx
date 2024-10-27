@@ -89,7 +89,7 @@ const fetchCampers = () => {
             </button>
           </div>
         </div>
-        <button className="search-button" onClick={fetchCampers}>Search</button>
+        <button className="search" onClick={fetchCampers}>Search</button>
       </div>
       <div className="catalog-list">
        <CamperDetailPage campers={campers} />

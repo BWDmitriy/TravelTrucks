@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import CatalogPage from './pages/CatalogPage/CatalogPage';
 import CamperDetailPage from './pages/CamperDetailPage/CamperDetailPage';
 import Header from './components/Header/Header';
+import './App.css'
 
 function App() {
   return (
