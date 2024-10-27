@@ -83,10 +83,13 @@ function CatalogPage() {
             </button>
           </div>
         </div>
-              {status === 'loading' && <p>Loading...</p>}
+              
+        <button className="search" onClick={fetchCampers}>Search</button>
+      </div>
+      {status === 'loading' && <p>Loading...</p>}
       {status === 'succeeded' && (
         <ul>
-          {campers.map((camper) => (
+          {campers.slice(0, 4).map((camper) => (
             <li key={camper.id}>
               {camper.name} - ${camper.price.toFixed(2)}
               <Link to={`/catalog/${camper.id}`} className="show-more-button">
@@ -96,8 +99,6 @@ function CatalogPage() {
           ))}
         </ul>
       )}
-        <button className="search" onClick={fetchCampers}>Search</button>
-      </div>
     </div>
   );
 }
