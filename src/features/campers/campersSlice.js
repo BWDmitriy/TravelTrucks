@@ -1,24 +1,18 @@
 // src/features/campers/campersSlice.js
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-export const fetchCampers = createAsyncThunk(
-  "campers/fetchCampers",
-  async (filters) => {
-    const response = await axios.get(
-      "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers",
-      { params: filters }
-    );
-    return response.data;
-  }
-);
+export const fetchCampers = createAsyncThunk('campers/fetchCampers', async (filters) => {
+  const response = await axios.get('https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers', { params: filters });
+  return response.data.items; // Return the items array
+});
 
 const campersSlice = createSlice({
-  name: "campers",
+  name: 'campers',
   initialState: {
-    list: [],
+    list: { items: [] }, // Initialize with an empty items array
     favorites: [],
-    status: "idle",
+    status: 'idle',
     error: null,
   },
   reducers: {
@@ -32,14 +26,14 @@ const campersSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.pending, (state) => {
-        state.status = "loading";
+        state.status = 'loading';
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
-        state.status = "succeeded";
-        state.list = action.payload;
+        state.status = 'succeeded';
+        state.list.items = action.payload; // Store the items array
       })
       .addCase(fetchCampers.rejected, (state, action) => {
-        state.status = "failed";
+        state.status = 'failed';
         state.error = action.error.message;
       });
   },

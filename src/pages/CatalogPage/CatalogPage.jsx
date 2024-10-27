@@ -1,24 +1,18 @@
 // src/pages/CatalogPage.jsx
-import { useEffect, useState } from 'react';
-import CamperDetailPage from '../CamperDetailPage/CamperDetailPage';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCampers } from '../../features/campers/campersSlice';
+import { Link } from 'react-router-dom';
 import './CatalogPage.css';
 
 function CatalogPage() {
-  const [campers, setCampers] = useState([]); // Initialize as an empty array
-
-const fetchCampers = () => {
-  fetch('https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers')
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Fetched campers:', data); // Log the data
-      setCampers(data);
-    })
-    .catch((error) => console.error('Error fetching campers:', error));
-  };
+  const dispatch = useDispatch();
+  const campers = useSelector((state) => state.campers.list.items);
+  const status = useSelector((state) => state.campers.status);
   
   useEffect(() => {
     fetchCampers();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="catalog-page">
@@ -89,10 +83,20 @@ const fetchCampers = () => {
             </button>
           </div>
         </div>
+              {status === 'loading' && <p>Loading...</p>}
+      {status === 'succeeded' && (
+        <ul>
+          {campers.map((camper) => (
+            <li key={camper.id}>
+              {camper.name} - ${camper.price.toFixed(2)}
+              <Link to={`/catalog/${camper.id}`} className="show-more-button">
+                Show more
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
         <button className="search" onClick={fetchCampers}>Search</button>
-      </div>
-      <div className="catalog-list">
-       <CamperDetailPage campers={campers} />
       </div>
     </div>
   );
