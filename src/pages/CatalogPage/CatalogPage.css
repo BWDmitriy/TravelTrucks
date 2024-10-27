@@ -33,6 +33,12 @@
   margin-right: 8px;
 }
 
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--main); 
+}
+
 .filters h2 {
   font-family: var(--font-family);
   font-weight: 600;

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampers } from '../../features/campers/campersSlice';
 import { Link } from 'react-router-dom';
 import './CatalogPage.css';
+import sprite from '../../assets/symbol-defs.svg'
 
 function CatalogPage() {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ function CatalogPage() {
           <div className="location-text">Location</div>
           <div className="location-detail">
             <svg className="icon">
-              <use xlinkHref="../../assets/symbol-defs.svg#icon-map"></use>
+              <use xlinkHref={`${sprite}#icon-map`}></use>
             </svg>
             Kyiv, Ukraine
           </div>
@@ -32,31 +33,31 @@ function CatalogPage() {
           <div className="filter-buttons">
             <button className="filter-button">
               <svg className="icon">
-                <use xlinkHref="#icon-wind"></use>
+                <use xlinkHref={`${sprite}#icon-wind`}></use>
               </svg>
               AC
             </button>
             <button className="filter-button">
               <svg className="icon">
-                <use xlinkHref="#icon-diagram"></use>
+                <use xlinkHref={`${sprite}#icon-diagram`} ></use>
               </svg>
               Automatic
             </button>
             <button className="filter-button">
               <svg className="icon">
-                <use xlinkHref="#icon-cup-hot"></use>
+                <use xlinkHref={`${sprite}#icon-cup-hot`} ></use>
               </svg>
               Kitchen
             </button>
             <button className="filter-button">
               <svg className="icon">
-                <use xlinkHref="#icon-tv"></use>
+                <use xlinkHref={`${sprite}#icon-tv`} ></use>
               </svg>
               TV
             </button>
             <button className="filter-button">
               <svg className="icon">
-                <use xlinkHref="#icon-ph_shower"></use>
+                <use xlinkHref={`${sprite}#icon-ph_shower`} ></use>
               </svg>
               Bathroom
             </button>
@@ -65,19 +66,19 @@ function CatalogPage() {
           <div className="filter-buttons">
             <button className="filter-button">
               <svg className="icon">
-                <use xlinkHref="#icon-bi_grid-1x2"></use>
+                <use xlinkHref={`${sprite}#icon-bi_grid-1x2`} ></use>
               </svg>
               Van
             </button>
             <button className="filter-button">
               <svg className="icon">
-                <use xlinkHref="#icon-bi_grid"></use>
+                <use xlinkHref={`${sprite}#icon-bi_grid`} ></use>
               </svg>
               Fully Integrated
             </button>
             <button className="filter-button">
               <svg className="icon">
-                <use xlinkHref="#icon-bi_grid-3x3"></use>
+                <use xlinkHref={`${sprite}#icon-bi_grid-3x3`} ></use>
               </svg>
               Alcove
             </button>
