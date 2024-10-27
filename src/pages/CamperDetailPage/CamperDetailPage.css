@@ -13,6 +13,7 @@
   padding: 20px;
   border-radius: 8px;
   background-color: #fff;
+  width: 800px;
 }
 
 .camper-image {
@@ -74,7 +75,7 @@
   font-size: 16px;
   font-weight: 500;
   color: #fff;
-  background-color: var(--button-color);
+  background-color: var(--button);
   border: none;
   border-radius: 5px;
   cursor: pointer;

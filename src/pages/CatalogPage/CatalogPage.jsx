@@ -112,11 +112,17 @@ function CatalogPage() {
           {campers.slice(0, visibleCount).map((camper) => (
             <li key={camper.id} className="camper-item">
               <div className="camper-photo">
-                <img src={camper.thumb} alt={camper.name} />
+                <img width="300px" src={camper.gallery[0].thumb} alt={camper.name} />
               </div>
               <div className="camper-details">
                 <h2>{camper.name} - ${camper.price.toFixed(2)}</h2>
-                <p>Rating: {'★'.repeat(camper.rating)}{'☆'.repeat(5 - camper.rating)}</p>
+                {/* <p>Rating: {'★'.repeat(camper.rating)}{'☆'.repeat(5 - camper.rating)}</p> */}
+                <p><svg className="icon">
+                <use xlinkHref={`${sprite}#icon-star-pressed`} ></use>
+                </svg> {camper.rating}({camper.reviews.length} Reviews) <svg className="icon">
+              <use xlinkHref={`${sprite}#icon-map`}></use>
+                  </svg>{camper.location}</p>
+                
                 <p>{camper.description}</p>
                 <ul className="camper-features">
                   {camper.features && camper.features.slice(0, 3).map((feature, index) => (
