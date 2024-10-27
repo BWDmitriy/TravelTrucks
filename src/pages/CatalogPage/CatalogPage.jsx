@@ -1,5 +1,5 @@
 // src/pages/CatalogPage.jsx
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampers } from '../../features/campers/campersSlice';
 import { Link } from 'react-router-dom';
@@ -10,10 +10,28 @@ function CatalogPage() {
   const dispatch = useDispatch();
   const campers = useSelector((state) => state.campers.list.items);
   const status = useSelector((state) => state.campers.status);
-  
+  const [visibleCount, setVisibleCount] = useState(4);
+  const [filters, setFilters] = useState({
+    location: '',
+    type: '',
+    features: [],
+  });
+
   useEffect(() => {
-    fetchCampers();
-  }, [dispatch]);
+    dispatch(fetchCampers(filters));
+  }, [dispatch, filters]);
+
+  const handleSearch = () => {
+    dispatch(fetchCampers(filters));
+  };
+
+  const handleFilterChange = (e) => {
+    const { name, value } = e.target;
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [name]: value,
+    }));
+  };
 
   return (
     <div className="catalog-page">
@@ -85,22 +103,39 @@ function CatalogPage() {
           </div>
         </div>
               
-        <button className="search" onClick={fetchCampers}>Search</button>
+        <button className="search" onClick={handleSearch}>Search</button>
       </div>
+      
       {status === 'loading' && <p>Loading...</p>}
-      {status === 'succeeded' && (
-        <ul>
-          {campers.slice(0, 4).map((camper) => (
-            <li key={camper.id}>
-              {camper.name} - ${camper.price.toFixed(2)}
-              <Link to={`/catalog/${camper.id}`} className="show-more-button">
-                Show more
-              </Link>
+      {status === 'succeeded' && campers && Array.isArray(campers) && (
+        <ul className="camper-list">
+          {campers.slice(0, visibleCount).map((camper) => (
+            <li key={camper.id} className="camper-item">
+              <div className="camper-photo">
+                <img src={camper.thumb} alt={camper.name} />
+              </div>
+              <div className="camper-details">
+                <h2>{camper.name} - ${camper.price.toFixed(2)}</h2>
+                <p>Rating: {'★'.repeat(camper.rating)}{'☆'.repeat(5 - camper.rating)}</p>
+                <p>{camper.description}</p>
+                <ul className="camper-features">
+                  {camper.features && camper.features.slice(0, 3).map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+                <Link to={`/catalog/${camper.id}`} className="show-more-button">
+                  Show more
+                </Link>
+              </div>
             </li>
-          ))}
+          ))}{campers && Array.isArray(campers) && visibleCount < campers.length && (
+        <button className="load-more" onClick={() => setVisibleCount(visibleCount + 4)}>Load More</button>
+      )}
         </ul>
       )}
+     
     </div>
+    
   );
 }
 

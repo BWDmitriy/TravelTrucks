@@ -10,7 +10,7 @@ export const fetchCampers = createAsyncThunk('campers/fetchCampers', async (filt
 const campersSlice = createSlice({
   name: 'campers',
   initialState: {
-    list: { items: [] }, // Initialize with an empty items array
+    list: { items: [] },
     favorites: [],
     status: 'idle',
     error: null,
@@ -30,7 +30,7 @@ const campersSlice = createSlice({
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.list.items = action.payload; // Store the items array
+        state.list.items = action.payload;
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         state.status = 'failed';

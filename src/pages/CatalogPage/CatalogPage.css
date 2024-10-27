@@ -3,11 +3,9 @@
   display: flex;
 }
 
-.catalog-sidebar {
-  width: 360px;
-  padding: 20px;
+/* .catalog-sidebar {
   border-right: 1px solid #ddd;
-}
+} */
 
 .location-text,
 .filters-text {
@@ -53,6 +51,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  width: 360px;
+  margin-bottom: 10px;
 }
 
 .filter-button {
