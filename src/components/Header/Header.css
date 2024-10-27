@@ -8,7 +8,7 @@
   background-color: var(--inputs);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  
 }
 
 /* .header-logo {
@@ -18,6 +18,8 @@
 .header-nav {
   display: flex;
   gap: 20px; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* src/components/Header.css */

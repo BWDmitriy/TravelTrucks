@@ -8,8 +8,12 @@ function Header() {
     <div className="header">
       <img src={Logo} alt="TravelTrucks Logo" className="header-logo" />
       <nav className="header-nav">
-        <NavLink to="/" className="header-link" activeClassName="active-link">Home</NavLink>
-        <NavLink to="/catalog" className="header-link" activeClassName="active-link">Catalog</NavLink>
+        <NavLink to="/" className="header-link" activeClassName="active">
+          Home
+        </NavLink>
+        <NavLink to="/catalog" className="header-link" activeClassName="active">
+          Catalog
+        </NavLink>
       </nav>
     </div>
   );
