@@ -115,8 +115,7 @@
 }
 
 .gallery-image {
-  width: 100px;
-  height: auto;
+  max-width: 32%;
+  height: 300px;
   border-radius: 5px;
-  width: calc(33% - 30px);
 }

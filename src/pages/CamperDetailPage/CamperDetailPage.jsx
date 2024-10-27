@@ -24,12 +24,12 @@ function CamperDetailPage() {
 
   return (
     <div className="camper-detail">
-      <h1>{camper.name}</h1><p><svg className="icon">
+      <h2>{camper.name}</h2><p><svg className="icon">
                 <use xlinkHref={`${sprite}#icon-star-pressed`} ></use>
                 </svg> {camper.rating}({camper.reviews.length} Reviews) <svg className="icon">
               <use xlinkHref={`${sprite}#icon-map`}></use>
                   </svg>{camper.location}</p>
-      <p>Price: Є{camper.price.toFixed(2)}</p>
+      <h2>Є{camper.price.toFixed(2)}</h2>
       
 
       <ul className="camper-features">
@@ -39,7 +39,7 @@ function CamperDetailPage() {
       </ul>
       <div className="camper-gallery">
         {(camper.gallery || []).map((image, index) => (
-          <img key={index} src={image.thumb} alt={`Gallery ${index + 1}`} className="gallery-image" />
+          <img key={index} src={image.original} alt={`Gallery ${index + 1}`} className="gallery-image" />
         ))}
       </div>
             <p>{camper.description}</p>
