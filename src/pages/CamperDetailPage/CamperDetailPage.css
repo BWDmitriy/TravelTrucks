@@ -119,3 +119,237 @@
   height: 300px;
   border-radius: 5px;
 }
+
+/* src/pages/CamperDetailPage.css */
+.camper-detail {
+  padding: 20px;
+}
+
+.camper-photo {
+  margin-bottom: 20px;
+}
+
+.camper-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #f0f0f0;
+  margin-right: 10px;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  border-bottom: 2px solid red;
+  background-color: #fff;
+}
+
+.tab-content {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.camper-features {
+  list-style: none;
+  padding: 0;
+}
+
+.camper-features li {
+  margin-bottom: 5px;
+}
+
+.vehicle-details {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.vehicle-details td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.camper-reviews {
+  margin-top: 20px;
+}
+
+.review {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reviewer-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.tab-content {
+  display: inline-block;
+    width: 49%;
+    margin-right: 5px;
+}
+
+
+/* src/pages/CamperDetailPage.css */
+.camper-detail {
+  padding: 20px;
+}
+
+.camper-photo {
+  margin-bottom: 20px;
+}
+
+.camper-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #f0f0f0;
+  margin-right: 10px;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  border-bottom: 2px solid red;
+  background-color: #fff;
+}
+
+.content-and-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-content,
+.booking-form {
+  width: 49%;
+}
+
+.booking-form h2 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+}
+
+.booking-form p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+}
+
+.booking-form input {
+  display: block;
+  width: 527px;
+  height: 60px;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 10px;
+  background-color: var(--inputs);
+}
+
+.booking-form input::placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+}
+
+.booking-form .comment-input {
+  height: 118px;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.booking-form button {
+  display: block;
+  margin: 0 auto;
+  width: 166px;
+  height: 56px;
+  border-radius: 200px;
+  padding: 16px 60px;
+  background-color: var(--button);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.tab-content {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.camper-features {
+  list-style: none;
+  padding: 0;
+}
+
+.camper-features li {
+  margin-bottom: 5px;
+}
+
+.vehicle-details {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.vehicle-details td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.camper-reviews {
+  margin-top: 20px;
+}
+
+.review {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reviewer-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
