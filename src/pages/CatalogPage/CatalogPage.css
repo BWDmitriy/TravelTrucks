@@ -3,11 +3,9 @@
   display: flex;
 }
 
-/* .catalog-sidebar {
-  border-right: 1px solid #ddd;
-} */
 .location {
   position: relative;
+  margin-bottom: 5px;
 }
 .location-text,
 .filters-text {
@@ -95,4 +93,24 @@
   flex-grow: 1;
   padding: 20px;
   /* Camper items styling will go here */
+}
+
+/* src/pages/CatalogPage.css */
+.type-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.type-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.type-button.active {
+  background-color: #007bff;
+  color: white;
 }

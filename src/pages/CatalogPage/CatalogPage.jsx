@@ -13,7 +13,7 @@ function CatalogPage() {
   const [visibleCount, setVisibleCount] = useState(4);
   const [filters, setFilters] = useState({
     location: '',
-    type: '',
+    form: '',
     features: [],
   });
 
@@ -33,7 +33,12 @@ function CatalogPage() {
       [name]: value,
     }));
   };
-
+const setTypeFilter = (form) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      form,
+    }));
+  };
   const applyFilters = () => {
     dispatch(fetchCampers(filters));
   };
@@ -91,26 +96,32 @@ function CatalogPage() {
             </button>
           </div>
           <h2>Vehicle type</h2>
-          <div className="filter-buttons">
-            <button className="filter-button">
-              <svg className="icon">
+          <div className="type-buttons">
+          <button
+            className={`type-button ${filters.type === 'van' ? 'active' : ''} filter-button`}
+            onClick={() => setTypeFilter('van')}
+          >
+            <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-bi_grid-1x2`} ></use>
-              </svg>
-              Van
-            </button>
-            <button className="filter-button">
-              <svg className="icon">
+              </svg>Van
+          </button>
+          <button
+            className={`type-button ${filters.type === 'fully-integrated' ? 'active' : ''} filter-button`}
+            onClick={() => setTypeFilter('fully-integrated')}
+          >
+            <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-bi_grid`} ></use>
-              </svg>
-              Fully Integrated
-            </button>
-            <button className="filter-button">
-              <svg className="icon">
+              </svg>Fully Integrated
+          </button>
+          <button
+            className={`type-button ${filters.type === 'alcove' ? 'active' : ''} filter-button`}
+            onClick={() => setTypeFilter('alcove')}
+          >
+            <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-bi_grid-3x3`} ></use>
-              </svg>
-              Alcove
-            </button>
-          </div>
+              </svg>Alcove
+          </button>
+        </div>
         </div>
               
         <button className="search" onClick={applyFilters}>Search</button>
@@ -126,7 +137,6 @@ function CatalogPage() {
               </div>
               <div className="camper-details">
                 <h2>{camper.name} - ${camper.price.toFixed(2)}</h2>
-                {/* <p>Rating: {'★'.repeat(camper.rating)}{'☆'.repeat(5 - camper.rating)}</p> */}
                 <p><svg className="icon">
                 <use xlinkHref={`${sprite}#icon-star-pressed`} ></use>
                 </svg> {camper.rating}({camper.reviews.length} Reviews) <svg className="icon">
@@ -149,7 +159,7 @@ function CatalogPage() {
       )}
         </ul>
       )}
-     
+      
     </div>
     
   );
