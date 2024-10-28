@@ -39,6 +39,16 @@ const setTypeFilter = (form) => {
       form,
     }));
   };
+
+  const toggleFeatureFilter = (feature) => {
+    setFilters((prevFilters) => {
+      const features = prevFilters.features.includes(feature)
+        ? prevFilters.features.filter((f) => f !== feature)
+        : [...prevFilters.features, feature];
+      return { ...prevFilters, features };
+    });
+  };
+
   const applyFilters = () => {
     dispatch(fetchCampers(filters));
   };
@@ -63,7 +73,7 @@ const setTypeFilter = (form) => {
         <div className="filters">
           <div className="filters-text">Filters</div>
           <h2>Vehicle equipment</h2>
-          <div className="filter-buttons">
+          {/* <div className="filter-buttons">
             <button className="filter-button">
               <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-wind`}></use>
@@ -80,7 +90,7 @@ const setTypeFilter = (form) => {
               <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-cup-hot`} ></use>
               </svg>
-              Kitchen
+              kitchen
             </button>
             <button className="filter-button">
               <svg className="icon">
@@ -92,13 +102,73 @@ const setTypeFilter = (form) => {
               <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-ph_shower`} ></use>
               </svg>
-              Bathroom
+              bathroom
             </button>
-          </div>
-          <h2>Vehicle type</h2>
-          <div className="type-buttons">
+          </div> */}
+           <div className="filter-buttons">
           <button
-            className={`type-button ${filters.type === 'van' ? 'active' : ''} filter-button`}
+            className={`\${filters.features.includes('AC') ? 'active' : ''} filter-button`}
+            onClick={() => toggleFeatureFilter('AC')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-wind`}></use>
+              </svg>AC
+          </button>
+          <button
+            className={`${filters.features.includes('kitchen') ? 'active' : ''} filter-button`}
+            onClick={() => toggleFeatureFilter('kitchen')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-cup-hot`} ></use>
+              </svg>Kitchen
+            </button>
+            <button
+            className={`${filters.features.includes('TV') ? 'active' : ''} filter-button`}
+            onClick={() => toggleFeatureFilter('TV')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-tv`} ></use>
+              </svg>TV
+          </button>
+          <button
+            className={`feature-button ${filters.features.includes('bathroom') ? 'active' : ''} filter-button`}
+            onClick={() => toggleFeatureFilter('bathroom')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-ph_shower`} ></use>
+              </svg>Bathroom
+            </button>
+            <button
+            className={`feature-button ${filters.features.includes('radio') ? 'active' : ''} filter-button`}
+            onClick={() => toggleFeatureFilter('radio')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-ui-radios`} ></use>
+              </svg>Radio
+            </button>
+            <button
+            className={`feature-button ${filters.features.includes('refrigerator') ? 'active' : ''} filter-button`}
+            onClick={() => toggleFeatureFilter('refrigerator')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-solar_fridge-outline`} ></use>
+              </svg>Refrigerator
+            </button>
+            <button
+            className={`feature-button ${filters.features.includes('gas') ? 'active' : ''} filter-button`}
+            onClick={() => toggleFeatureFilter('gas')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-hugeicons_gas-stove`} ></use>
+              </svg>Gas
+          </button>
+          {/* Add more feature buttons as needed */}
+        </div>
+          <h2>Vehicle type</h2>
+          <div className="filter-buttons">
+          <button
+            className={`${filters.form === 'van' ? 'active' : ''} filter-button`}
+            
             onClick={() => setTypeFilter('van')}
           >
             <svg className="icon">
@@ -106,7 +176,7 @@ const setTypeFilter = (form) => {
               </svg>Van
           </button>
           <button
-            className={`type-button ${filters.type === 'fully-integrated' ? 'active' : ''} filter-button`}
+            className={`${filters.form === 'fully-integrated' ? 'active' : ''} filter-button`}
             onClick={() => setTypeFilter('fully-integrated')}
           >
             <svg className="icon">
@@ -114,7 +184,7 @@ const setTypeFilter = (form) => {
               </svg>Fully Integrated
           </button>
           <button
-            className={`type-button ${filters.type === 'alcove' ? 'active' : ''} filter-button`}
+            className={`${filters.form === 'alcove' ? 'active' : ''} filter-button`}
             onClick={() => setTypeFilter('alcove')}
           >
             <svg className="icon">
