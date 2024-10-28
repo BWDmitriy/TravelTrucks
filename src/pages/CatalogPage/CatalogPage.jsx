@@ -17,9 +17,14 @@ function CatalogPage() {
     features: [],
   });
 
+  // useEffect(() => {
+  //   dispatch(fetchCampers(filters));
+  // }, [dispatch, filters]);
+
   useEffect(() => {
-    dispatch(fetchCampers(filters));
-  }, [dispatch, filters]);
+    // Initial fetch without filters
+    dispatch(fetchCampers({}));
+  }, [dispatch]);
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
@@ -38,12 +43,6 @@ function CatalogPage() {
       <div className="catalog-sidebar">
         <div className="location">
           <div className="location-text">Location</div>
-          {/* <div className="location-detail">
-            <svg className="icon">
-              <use xlinkHref={`${sprite}#icon-map`}></use>
-            </svg>
-            Kyiv, Ukraine
-          </div> */}
           <svg className="icon icon-location">
               <use xlinkHref={`${sprite}#icon-map`}></use>
             </svg>
