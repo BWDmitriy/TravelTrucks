@@ -6,7 +6,9 @@
 /* .catalog-sidebar {
   border-right: 1px solid #ddd;
 } */
-
+.location {
+  position: relative;
+}
 .location-text,
 .filters-text {
   font-family: var(--font-family);
@@ -30,13 +32,23 @@
 .location-detail .icon {
   margin-right: 8px;
 }
-
+.location-filter {
+  border-radius: 5px;
+  width: 300px;
+  height: 42px;
+  padding: 5px;
+  padding-left: 14%;
+}
 .icon {
   width: 24px;
   height: 24px;
   fill: var(--main); 
 }
-
+.icon-location {
+  position: absolute;
+  left: 5%;
+  top: 55%;
+}
 .filters h2 {
   font-family: var(--font-family);
   font-weight: 600;

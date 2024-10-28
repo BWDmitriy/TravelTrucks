@@ -21,10 +21,6 @@ function CatalogPage() {
     dispatch(fetchCampers(filters));
   }, [dispatch, filters]);
 
-  const handleSearch = () => {
-    dispatch(fetchCampers(filters));
-  };
-
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters((prevFilters) => ({
@@ -33,17 +29,32 @@ function CatalogPage() {
     }));
   };
 
+  const applyFilters = () => {
+    dispatch(fetchCampers(filters));
+  };
+
   return (
     <div className="catalog-page">
       <div className="catalog-sidebar">
         <div className="location">
           <div className="location-text">Location</div>
-          <div className="location-detail">
+          {/* <div className="location-detail">
             <svg className="icon">
               <use xlinkHref={`${sprite}#icon-map`}></use>
             </svg>
             Kyiv, Ukraine
-          </div>
+          </div> */}
+          <svg className="icon icon-location">
+              <use xlinkHref={`${sprite}#icon-map`}></use>
+            </svg>
+          <input
+          className="location-filter"
+          type="text"
+          name="location"
+          placeholder="Kyiv, Ukraine"
+          value={filters.location}
+          onChange={handleFilterChange}
+        />
         </div>
         <div className="filters">
           <div className="filters-text">Filters</div>
@@ -103,7 +114,7 @@ function CatalogPage() {
           </div>
         </div>
               
-        <button className="search" onClick={handleSearch}>Search</button>
+        <button className="search" onClick={applyFilters}>Search</button>
       </div>
       
       {status === 'loading' && <p>Loading...</p>}
