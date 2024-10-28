@@ -161,6 +161,14 @@ const setTypeFilter = (form) => {
             <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-hugeicons_gas-stove`} ></use>
               </svg>Gas
+            </button>
+            <button
+            className={`feature-button ${filters.features.includes('water') ? 'active' : ''} filter-button`}
+            onClick={() => toggleFeatureFilter('water')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-ion_water-outline`} ></use>
+              </svg>Water
           </button>
           {/* Add more feature buttons as needed */}
         </div>
