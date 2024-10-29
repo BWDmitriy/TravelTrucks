@@ -1,4 +1,4 @@
-// src/store.js
+// src/redux/store.js
 import { configureStore } from "@reduxjs/toolkit";
 import campersReducer from "./slice/campersSlice";
 
