@@ -51,7 +51,6 @@ a {
 
 img {
   display: block;
-  /* max-width: 100%; */
   height: auto;
 }
 
@@ -73,7 +72,6 @@ input {
 
 body {
   line-height: 1.5;
-  /* margin: 0 auto; */
   width: 320px;
   color: var(--main);
 }

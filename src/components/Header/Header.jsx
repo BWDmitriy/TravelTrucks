@@ -8,10 +8,16 @@ function Header() {
     <div className="header">
       <img src={Logo} alt="TravelTrucks Logo" className="header-logo" />
       <nav className="header-nav">
-        <NavLink to="/" className="header-link" activeClassName="active">
+        <NavLink
+          to="/"
+          className={({ isActive }) => `header-link ${isActive ? 'active' : ''}`}
+        >
           Home
         </NavLink>
-        <NavLink to="/catalog" className="header-link" activeClassName="active">
+        <NavLink
+          to="/catalog"
+          className={({ isActive }) => `header-link ${isActive ? 'active' : ''}`}
+        >
           Catalog
         </NavLink>
       </nav>
