@@ -20,7 +20,7 @@ function CatalogPage() {
   });
   
   useEffect(() => {
-    // Initial fetch without filters
+
     dispatch(fetchCampers());
   }, [dispatch]);
 
@@ -221,18 +221,24 @@ function CatalogPage() {
         <ul className="camper-list">
           {campers.slice(0, visibleCount).map((camper) => (
             <li key={camper.id} className="camper-item">
-              <div className="camper-photo">
-                <img width="300px" src={camper.gallery[0].thumb} alt={camper.name} />
-              </div>
-              <div className="camper-details">
-                <h2>{camper.name} - ${camper.price.toFixed(2)}</h2>
-                <p><svg className="icon">
-                <use xlinkHref={`${sprite}#icon-star-pressed`} ></use>
-                </svg> {camper.rating}({camper.reviews.length} Reviews) <svg className="icon">
-              <use xlinkHref={`${sprite}#icon-map`}></use>
-                  </svg>{camper.location}</p>
+              <div
+                className="camper-photo"
+                style={{
+                  backgroundImage: `url(${camper.gallery[0].thumb})`
+                }}
+              ></div>
+              <div className="camper-details"><div>
+                <div className="camper-details-header">
+                  <h2>{camper.name}</h2><h2 className='camper-details-price'>€{camper.price.toFixed(2)}</h2>
+                </div>
                 
-                <p>{camper.description}</p>
+                <p className="camper-ratings"><svg className="icon">
+                <use xlinkHref={`${sprite}#icon-star-pressed`} ></use>
+                </svg> <span>{camper.rating}({camper.reviews.length} Reviews)</span> <svg className="icon">
+              <use xlinkHref={`${sprite}#icon-map`}></use>
+                  </svg>{camper.location}</p></div>
+                
+                <p className='single-line-ellipsis'>{camper.description}</p>
                 <ul className="camper-features">
                   {camper.features && camper.features.slice(0, 3).map((feature, index) => (
                     <li key={index}>{feature}</li>
