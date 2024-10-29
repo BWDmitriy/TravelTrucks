@@ -66,6 +66,29 @@ function CatalogPage() {
     dispatch(fetchCampers(filters));
   };
 
+   const getFeatureList = (camper) => {
+    const features = [];
+    const featureKeys = [
+      'AC', 'bathroom', 'kitchen', 'TV', 'radio', 'refrigerator', 'microwave', 'gas', 'water'
+    ];
+
+    featureKeys.forEach((key) => {
+      if (camper[key]) {
+        features.push(key.charAt(0).toUpperCase() + key.slice(1));
+      }
+    });
+
+    if (camper.transmission === 'automatic') {
+      features.push('Automatic');
+    }
+
+    if (camper.engine === 'petrol') {
+      features.push('Petrol');
+    }
+
+    return features;
+  };
+
   return (
     <div className="catalog-page">
       <div className="catalog-sidebar">
@@ -151,6 +174,14 @@ function CatalogPage() {
             <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-hugeicons_gas-stove`} ></use>
               </svg>Gas
+            </button>
+            <button
+            className={`feature-button ${filters.features.includes('microwave') ? 'active' : ''} filter-button`}
+            onClick={() => toggleFeatureFilter('microwave')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-lucide_microwave`} ></use>
+              </svg>Microwave
             </button>
             <button
             className={`feature-button ${filters.features.includes('water') ? 'active' : ''} filter-button`}
@@ -239,8 +270,13 @@ function CatalogPage() {
                   </svg>{camper.location}</p></div>
                 
                 <p className='single-line-ellipsis'>{camper.description}</p>
-                <ul className="camper-features">
+                {/* <ul className="camper-features">
                   {camper.features && camper.features.slice(0, 3).map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul> */}
+                <ul className="camper-features">
+                  {getFeatureList(camper).map((feature, index) => (
                     <li key={index}>{feature}</li>
                   ))}
                 </ul>
