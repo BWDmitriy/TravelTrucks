@@ -54,12 +54,6 @@
   margin: 10px 0;
 }
 
-.camper-features {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0;
-}
-
 .show-more-button {
     font-size: 16px;
     font-weight: 500;
@@ -95,12 +89,6 @@
   width: 100%;
   max-width: 400px;
   height: auto;
-}
-
-
-
-.camper-features li {
-  margin-bottom: 5px;
 }
 
 .camper-gallery {
@@ -152,14 +140,7 @@
   padding-top: 20px;
 }
 
-.camper-features {
-  list-style: none;
-  padding: 0;
-}
 
-.camper-features li {
-  margin-bottom: 5px;
-}
 
 .vehicle-details {
   width: 100%;
@@ -298,15 +279,6 @@
 .tab-content {
   border-top: 1px solid #ddd;
   padding-top: 20px;
-}
-
-.camper-features {
-  list-style: none;
-  padding: 0;
-}
-
-.camper-features li {
-  margin-bottom: 5px;
 }
 
 .vehicle-details {

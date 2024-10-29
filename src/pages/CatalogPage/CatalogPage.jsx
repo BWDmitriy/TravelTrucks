@@ -66,7 +66,21 @@ function CatalogPage() {
     dispatch(fetchCampers(filters));
   };
 
-   const getFeatureList = (camper) => {
+   const featureIcons = {
+    AC: `${sprite}#icon-wind`,
+    Bathroom: `${sprite}#icon-ph_shower`,
+    Kitchen: `${sprite}#icon-cup-hot`,
+    TV: `${sprite}#icon-tv`,
+    Radio: `${sprite}#icon-ui-radios`,
+    Refrigerator: `${sprite}#icon-solar_fridge-outline`,
+    Microwave: `${sprite}#icon-lucide_microwave`,
+    Gas: `${sprite}#icon-hugeicons_gas-stove`,
+    Water: `${sprite}#icon-ion_water-outline`,
+    'Automatic Transmission': `${sprite}#icon-diagram`,
+    'Petrol Engine': `${sprite}#icon-fuel-pump`,
+  };
+
+  const getFeatureList = (camper) => {
     const features = [];
     const featureKeys = [
       'AC', 'bathroom', 'kitchen', 'TV', 'radio', 'refrigerator', 'microwave', 'gas', 'water'
@@ -79,11 +93,11 @@ function CatalogPage() {
     });
 
     if (camper.transmission === 'automatic') {
-      features.push('Automatic');
+      features.push('Automatic Transmission');
     }
 
     if (camper.engine === 'petrol') {
-      features.push('Petrol');
+      features.push('Petrol Engine');
     }
 
     return features;
@@ -275,9 +289,18 @@ function CatalogPage() {
                     <li key={index}>{feature}</li>
                   ))}
                 </ul> */}
-                <ul className="camper-features">
+                {/* <ul className="camper-features">
                   {getFeatureList(camper).map((feature, index) => (
                     <li key={index}>{feature}</li>
+                  ))}
+                </ul> */}
+                <ul className="camper-features">
+                  {getFeatureList(camper).map((feature, index) => (
+                    <li className="camper-features-item" key={index}>
+                      <svg className="icon">
+                        <use xlinkHref={featureIcons[feature]}></use>
+                      </svg> {feature}
+                    </li>
                   ))}
                 </ul>
                 <Link to={`/catalog/${camper.id}`} className="show-more-button">

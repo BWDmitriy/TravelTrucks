@@ -66,6 +66,23 @@
   text-decoration-skip-ink: none;
   color: var(--main);
 }
+.camper-features {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.camper-features-item {
+  display: flex;
+  border-radius: 100px;
+  width: 143px;
+  height: 48px;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
 .location {
   position: relative;
   margin-bottom: 5px;
