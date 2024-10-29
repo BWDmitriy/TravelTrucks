@@ -16,7 +16,13 @@ function CamperDetailPage() {
 
   useEffect(() => {
     if (!camper) {
-      dispatch(fetchCampers());
+      dispatch(fetchCampers({
+    location: '',
+    form: '',
+    engine: '',
+    transmission: '',
+    features: [],
+  }));
     }
   }, [dispatch, camper]);
 
