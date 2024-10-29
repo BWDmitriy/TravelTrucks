@@ -205,22 +205,21 @@ function CatalogPage() {
                 <use xlinkHref={`${sprite}#icon-ion_water-outline`} ></use>
               </svg>Water
           </button>
-          {/* Add more feature buttons as needed */}
         </div>
           <h2>Vehicle type</h2>
           <div className="filter-buttons">
           <button
-            className={`${filters.form === 'van' ? 'active' : ''} filter-button`}
+            className={`${filters.form === 'panelTruck' ? 'active' : ''} filter-button`}
             
-            onClick={() => setTypeFilter('van')}
+            onClick={() => setTypeFilter('panelTruck')}
           >
             <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-bi_grid-1x2`} ></use>
               </svg>Van
           </button>
           <button
-            className={`${filters.form === 'fully-integrated' ? 'active' : ''} filter-button`}
-            onClick={() => setTypeFilter('fully-integrated')}
+            className={`${filters.form === 'fullyIntegrated' ? 'active' : ''} filter-button`}
+            onClick={() => setTypeFilter('fullyIntegrated')}
           >
             <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-bi_grid`} ></use>
