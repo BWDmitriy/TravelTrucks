@@ -28,12 +28,54 @@ function CamperDetailPage() {
     fullyIntegrated: 'Fully integrated',
     panelTruck: 'Panel truck',
   };
+
+  const featureIcons = {
+    AC: `${sprite}#icon-wind`,
+    Bathroom: `${sprite}#icon-ph_shower`,
+    Kitchen: `${sprite}#icon-cup-hot`,
+    TV: `${sprite}#icon-tv`,
+    Radio: `${sprite}#icon-ui-radios`,
+    Refrigerator: `${sprite}#icon-solar_fridge-outline`,
+    Microwave: `${sprite}#icon-lucide_microwave`,
+    Gas: `${sprite}#icon-hugeicons_gas-stove`,
+    Water: `${sprite}#icon-ion_water-outline`,
+    'Automatic Transmission': `${sprite}#icon-diagram`,
+    'Petrol Engine': `${sprite}#icon-fuel-pump`,
+  };
+
+  const getFeatureList = (camper) => {
+    const features = [];
+    const featureKeys = [
+      'AC', 'bathroom', 'kitchen', 'TV', 'radio', 'refrigerator', 'microwave', 'gas', 'water'
+    ];
+
+    featureKeys.forEach((key) => {
+      if (camper[key]) {
+        features.push(key.charAt(0).toUpperCase() + key.slice(1));
+      }
+    });
+
+    if (camper.transmission === 'automatic') {
+      features.push('Automatic Transmission');
+    }
+
+    if (camper.engine === 'petrol') {
+      features.push('Petrol Engine');
+    }
+
+    return features;
+  };
+
   const renderFeatures = () => (
     <div>
       <ul className="camper-features">
-        {(camper.features || []).map((feature, index) => (
-          <li key={index}>{feature}</li>
-        ))}
+        {getFeatureList(camper).map((feature, index) => (
+                    <li className="camper-features-item" key={index}>
+                      <svg className="icon">
+                        <use xlinkHref={featureIcons[feature]}></use>
+                      </svg> {feature}
+                    </li>
+                  ))}
       </ul>
       <h3>Vehicle Details</h3>
       <div className="vehicle-details">
@@ -87,22 +129,17 @@ function CamperDetailPage() {
 
   return (
     <div className="camper-detail">
-      <h2>{camper.name}</h2><p><svg className="icon">
+      <h2>{camper.name}</h2><p className='camper-ratings'>
+        <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-star-pressed`} ></use>
                 </svg> {camper.rating}({camper.reviews.length} Reviews) <svg className="icon">
               <use xlinkHref={`${sprite}#icon-map`}></use>
                   </svg>{camper.location}</p>
       <h2 className='camper-details-price'>€{camper.price.toFixed(2)}</h2>
       
-
-      <ul className="camper-features">
-        {(camper.features || []).map((feature, index) => (
-          <li key={index}>{feature}</li>
-        ))}
-      </ul>
+      
       <div className="camper-gallery">
         {(camper.gallery || []).map((image, index) => (
-          // <img key={index} src={image.original} alt={`Gallery ${index + 1}`} className="gallery-image" />
           <div key={index}
                 className="camper-photo"
                 style={{

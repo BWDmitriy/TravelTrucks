@@ -18,9 +18,8 @@ function CatalogPage() {
     transmission: '',
     features: [],
   });
-  
+  // useDispatch(fetchCampers());
   useEffect(() => {
-
     dispatch(fetchCampers());
   }, [dispatch]);
 

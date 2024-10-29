@@ -43,7 +43,13 @@
   align-items: center;
   gap: 5px;
 }
-
+.camper-ratings {
+  display: flex;
+}
+.camper-ratings .icon ~ .icon {
+  margin-left: 16px;
+  margin-right: 4px;
+}
 .camper-text {
   font-family: var(--font-family);
   font-weight: 400;
@@ -283,9 +289,15 @@ height: 588px;
   border: none;
   cursor: pointer;
 }
+
+.booking-form button:hover {
+  background-color: var(--button-hover);
+}
+
 .booking-form > p {
   margin-bottom: 24px;
 }
+
 .tab-content {
   border-top: 1px solid #ddd;
   padding-top: 20px;

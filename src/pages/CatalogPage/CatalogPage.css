@@ -72,6 +72,8 @@
   margin: 10px 0;
   display: flex;
   flex-wrap: wrap;
+  margin-left: auto;
+  width: 527px;
 }
 
 .camper-features-item {
@@ -116,6 +118,7 @@
   height: 42px;
   padding: 5px;
   padding-left: 14%;
+  border: none;
 }
 .icon {
   width: 24px;
@@ -142,7 +145,7 @@
   flex-wrap: wrap;
   gap: 10px;
   width: 360px;
-  margin-bottom: 10px;
+  margin-bottom: 32px;
 }
 
 .filter-button {
@@ -157,13 +160,17 @@
   background-color: #f9f9f9;
   cursor: pointer;
   transition: background-color 0.3s;
+  border-radius: 12px;
+  padding: 16px 40px;
+  width: 112px;
+  height: 96px;
 }
 
 .filter-button:hover {
-  background-color: #e0e0e0;
+  border: 1px solid var(--button);
 }
 .filter-button.active {
-  background-color: #e0e0e0;
+  border: 1px solid var(--button);
 }
 .filter-button .icon {
   width: 24px;
@@ -174,7 +181,6 @@
 .catalog-list {
   flex-grow: 1;
   padding: 20px;
-  /* Camper items styling will go here */
 }
 .search {
   font-size: 16px;
