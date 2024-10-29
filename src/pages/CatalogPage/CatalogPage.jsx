@@ -14,6 +14,7 @@ function CatalogPage() {
   const [filters, setFilters] = useState({
     location: '',
     form: '',
+    engine: '',
     features: [],
   });
 
@@ -37,6 +38,12 @@ const setTypeFilter = (form) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
       form,
+    }));
+  };
+const setEngineFilter = (engine) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      engine,
     }));
   };
 
@@ -73,38 +80,6 @@ const setTypeFilter = (form) => {
         <div className="filters">
           <div className="filters-text">Filters</div>
           <h2>Vehicle equipment</h2>
-          {/* <div className="filter-buttons">
-            <button className="filter-button">
-              <svg className="icon">
-                <use xlinkHref={`${sprite}#icon-wind`}></use>
-              </svg>
-              AC
-            </button>
-            <button className="filter-button">
-              <svg className="icon">
-                <use xlinkHref={`${sprite}#icon-diagram`} ></use>
-              </svg>
-              Automatic
-            </button>
-            <button className="filter-button">
-              <svg className="icon">
-                <use xlinkHref={`${sprite}#icon-cup-hot`} ></use>
-              </svg>
-              kitchen
-            </button>
-            <button className="filter-button">
-              <svg className="icon">
-                <use xlinkHref={`${sprite}#icon-tv`} ></use>
-              </svg>
-              TV
-            </button>
-            <button className="filter-button">
-              <svg className="icon">
-                <use xlinkHref={`${sprite}#icon-ph_shower`} ></use>
-              </svg>
-              bathroom
-            </button>
-          </div> */}
            <div className="filter-buttons">
           <button
             className={`\${filters.features.includes('AC') ? 'active' : ''} filter-button`}
@@ -113,7 +88,7 @@ const setTypeFilter = (form) => {
             <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-wind`}></use>
               </svg>AC
-          </button>
+            </button>
           <button
             className={`${filters.features.includes('kitchen') ? 'active' : ''} filter-button`}
             onClick={() => toggleFeatureFilter('kitchen')}
@@ -199,7 +174,28 @@ const setTypeFilter = (form) => {
                 <use xlinkHref={`${sprite}#icon-bi_grid-3x3`} ></use>
               </svg>Alcove
           </button>
-        </div>
+          </div>
+          <h2>Engine type</h2>
+          <div className="filter-buttons">
+          <button
+            className={`${filters.engine === 'diesel' ? 'active' : ''} filter-button`}
+            
+            onClick={() => setEngineFilter('diesel')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-fuel-pump`} ></use>
+              </svg>Diesel
+          </button>
+          <button
+            className={`${filters.engine === 'petrol' ? 'active' : ''} filter-button`}
+            
+            onClick={() => setEngineFilter('petrol')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-fuel-pump`} ></use>
+              </svg>Petrol
+          </button>
+          </div>
         </div>
               
         <button className="search" onClick={applyFilters}>Search</button>

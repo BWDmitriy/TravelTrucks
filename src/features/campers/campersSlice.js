@@ -8,12 +8,13 @@ import axios from 'axios';
 // });
 
 export const fetchCampers = createAsyncThunk('campers/fetchCampers', async (filters) => {
-  const { location, form, features } = filters;
+  const { location, form, engine, features } = filters;
   
   // Construct query parameters
   const params = {
     location: location || undefined,
     form: form || undefined,
+    engine: engine || undefined,
   };
 
   // Add each feature as a separate query parameter
