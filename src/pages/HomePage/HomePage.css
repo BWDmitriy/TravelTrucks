@@ -1,13 +1,17 @@
 /* src/pages/HomePage.css */
 .home-page {
-  background-image: url('../../assets/Picture.jpg'); /* Adjust the path if necessary */
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 64px; /* Adjust padding as needed */
+  padding-left: 64px;
+  margin: 0;
+  width: 100vw; 
+  background-image: url('../../assets/Picture.jpg'); 
+  background-size: cover; 
+  /* background-position: center;  */
+  background-repeat: no-repeat; 
+  overflow-x: hidden;
 }
 
 .home-content {
@@ -31,16 +35,21 @@
 }
 
 .view-now-button {
-  /* Assuming standard styles are defined in index.css */
-  padding: 12px 24px;
   font-size: 16px;
   font-weight: 500;
-  color: #fff;
   background-color: var(--button);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 200px;
+  height: 56px;
+  font-family: var(--font-family);
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
 }
 
 .view-now-button:hover {

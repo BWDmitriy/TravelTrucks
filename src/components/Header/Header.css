@@ -2,18 +2,19 @@
 
 .header {
   border-bottom: 1px solid var(--badges);
-  padding: 24px 64px;
-  width: 1440px;
+  /* padding: 24px 64px;*/
+  width: 1440px; 
   height: 72px;
   background-color: var(--inputs);
   display: flex;
   align-items: center;
-  
+  position: relative;
 }
 
-/* .header-logo {
-  height: 100%; 
-} */
+.header-logo {
+  position: absolute;
+  left: 5%;
+}
 
 .header-nav {
   display: flex;

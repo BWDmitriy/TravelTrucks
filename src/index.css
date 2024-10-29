@@ -73,7 +73,7 @@ input {
 
 body {
   line-height: 1.5;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: 320px;
   color: var(--main);
 }
