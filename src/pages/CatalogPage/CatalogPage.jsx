@@ -15,6 +15,7 @@ function CatalogPage() {
     location: '',
     form: '',
     engine: '',
+    transmission: '',
     features: [],
   });
 
@@ -22,9 +23,10 @@ function CatalogPage() {
   //   dispatch(fetchCampers(filters));
   // }, [dispatch, filters]);
 
+
   useEffect(() => {
     // Initial fetch without filters
-    dispatch(fetchCampers({}));
+    dispatch(fetchCampers());
   }, [dispatch]);
 
   const handleFilterChange = (e) => {
@@ -34,18 +36,27 @@ function CatalogPage() {
       [name]: value,
     }));
   };
-const setTypeFilter = (form) => {
+
+  const setTypeFilter = (form) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
-      form,
+      form: prevFilters.form === form ? '' : form, 
     }));
   };
-const setEngineFilter = (engine) => {
+
+  const setEngineFilter = (engine) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
-      engine,
+      engine: prevFilters.engine === engine ? '' : engine, 
     }));
   };
+  const setTransmissionFilter = (transmission) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      transmission: prevFilters.transmission === transmission ? '' : transmission, 
+    }));
+  };
+
 
   const toggleFeatureFilter = (feature) => {
     setFilters((prevFilters) => {
@@ -82,13 +93,22 @@ const setEngineFilter = (engine) => {
           <h2>Vehicle equipment</h2>
            <div className="filter-buttons">
           <button
-            className={`\${filters.features.includes('AC') ? 'active' : ''} filter-button`}
+            className={`${filters.features.includes('AC') ? 'active' : ''} filter-button`}
             onClick={() => toggleFeatureFilter('AC')}
           >
             <svg className="icon">
                 <use xlinkHref={`${sprite}#icon-wind`}></use>
               </svg>AC
             </button>
+            <button
+            className={`${filters.transmission === 'automatic' ? 'active' : ''} filter-button`}
+            
+            onClick={() => setTransmissionFilter('automatic')}
+          >
+            <svg className="icon">
+                <use xlinkHref={`${sprite}#icon-diagram`} ></use>
+              </svg>Automatic
+          </button>
           <button
             className={`${filters.features.includes('kitchen') ? 'active' : ''} filter-button`}
             onClick={() => toggleFeatureFilter('kitchen')}
