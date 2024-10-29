@@ -23,7 +23,11 @@ function CamperDetailPage() {
   if (!camper) {
     return <p>Loading...</p>;
   }
-
+  const formDisplayNames = {
+    alcove: 'Alcove',
+    fullyIntegrated: 'Fully integrated',
+    panelTruck: 'Panel truck',
+  };
   const renderFeatures = () => (
     <div>
       <ul className="camper-features">
@@ -36,7 +40,7 @@ function CamperDetailPage() {
         <div>
           <p>Form
             </p>
-          <p>{camper.form}</p>
+          <p>{formDisplayNames[camper.form]}</p>
         </div>
         <div>
           <p>Length</p>
