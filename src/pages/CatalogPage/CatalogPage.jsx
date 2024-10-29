@@ -1,7 +1,7 @@
 // src/pages/CatalogPage.jsx
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCampers } from '../../features/campers/campersSlice';
+import { fetchCampers } from '../../redux/slice/campersSlice';
 import { Link } from 'react-router-dom';
 import './CatalogPage.css';
 import sprite from '../../assets/symbol-defs.svg'
@@ -18,12 +18,7 @@ function CatalogPage() {
     transmission: '',
     features: [],
   });
-
-  // useEffect(() => {
-  //   dispatch(fetchCampers(filters));
-  // }, [dispatch, filters]);
-
-
+  
   useEffect(() => {
     // Initial fetch without filters
     dispatch(fetchCampers());

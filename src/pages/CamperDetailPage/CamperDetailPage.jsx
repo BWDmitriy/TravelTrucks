@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCampers } from '../../features/campers/campersSlice';
+import { fetchCampers } from '../../redux/slice/campersSlice';
 import './CamperDetailPage.css';
 import sprite from '../../assets/symbol-defs.svg'
 
