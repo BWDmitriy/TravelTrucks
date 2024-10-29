@@ -18,10 +18,16 @@ function CatalogPage() {
     transmission: '',
     features: [],
   });
-  // useDispatch(fetchCampers());
   useEffect(() => {
-    dispatch(fetchCampers());
+    dispatch(fetchCampers({
+    location: '',
+    form: '',
+    engine: '',
+    transmission: '',
+    features: [],
+  })); 
   }, [dispatch]);
+
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
