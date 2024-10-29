@@ -284,16 +284,6 @@ function CatalogPage() {
                   </svg>{camper.location}</p></div>
                 
                 <p className='single-line-ellipsis'>{camper.description}</p>
-                {/* <ul className="camper-features">
-                  {camper.features && camper.features.slice(0, 3).map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul> */}
-                {/* <ul className="camper-features">
-                  {getFeatureList(camper).map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul> */}
                 <ul className="camper-features">
                   {getFeatureList(camper).map((feature, index) => (
                     <li className="camper-features-item" key={index}>

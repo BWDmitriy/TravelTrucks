@@ -32,34 +32,35 @@ function CamperDetailPage() {
         ))}
       </ul>
       <h3>Vehicle Details</h3>
-      <table className="vehicle-details">
-        <tbody>
-          <tr>
-            <td>Form</td>
-            <td>{camper.form}</td>
-          </tr>
-          <tr>
-            <td>Length</td>
-            <td>{camper.length}</td>
-          </tr>
-          <tr>
-            <td>Width</td>
-            <td>{camper.width}</td>
-          </tr>
-          <tr>
-            <td>Height</td>
-            <td>{camper.height}</td>
-          </tr>
-          <tr>
-            <td>Tank</td>
-            <td>{camper.tank}</td>
-          </tr>
-          <tr>
-            <td>Consumption</td>
-            <td>{camper.consumption}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="vehicle-details">
+        <div>
+          <p>Form
+            </p>
+          <p>{camper.form}</p>
+        </div>
+        <div>
+          <p>Length</p>
+          <p>{camper.length}</p>
+        </div>
+        <div>
+          <p>Width</p>
+          <p>{camper.width}</p>
+        </div>
+        <div>
+          <p>Height</p>
+          <p>{camper.height}</p>
+        </div>
+        <div>
+            
+          <p>Tank</p>
+          <p>{camper.tank}</p>
+        </div>
+        <div>
+          <p>Consumption</p>
+          <p>{camper.consumption}</p>
+        </div>
+
+      </div>
     </div>
   );
 
@@ -87,7 +88,7 @@ function CamperDetailPage() {
                 </svg> {camper.rating}({camper.reviews.length} Reviews) <svg className="icon">
               <use xlinkHref={`${sprite}#icon-map`}></use>
                   </svg>{camper.location}</p>
-      <h2>Є{camper.price.toFixed(2)}</h2>
+      <h2 className='camper-details-price'>€{camper.price.toFixed(2)}</h2>
       
 
       <ul className="camper-features">
@@ -97,10 +98,16 @@ function CamperDetailPage() {
       </ul>
       <div className="camper-gallery">
         {(camper.gallery || []).map((image, index) => (
-          <img key={index} src={image.original} alt={`Gallery ${index + 1}`} className="gallery-image" />
+          // <img key={index} src={image.original} alt={`Gallery ${index + 1}`} className="gallery-image" />
+          <div key={index}
+                className="camper-photo"
+                style={{
+                  backgroundImage: `url(${image.original})`
+                }}
+              ></div>
         ))}
       </div>
-            <p>{camper.description}</p>
+            <p className='camper-description'>{camper.description}</p>
 
       <div className="tabs">
         <button
