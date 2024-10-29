@@ -45,6 +45,7 @@
 }
 .camper-ratings {
   display: flex;
+  margin-bottom: 8px;
 }
 .camper-ratings .icon ~ .icon {
   margin-left: 16px;
@@ -103,9 +104,7 @@
   margin-top: 20px;
   margin-bottom: 28px;
 }
-.camper-details-price {
-  margin-top: 16px;
-}
+
 .gallery-image {
   max-width: 32%;
   height: 300px;

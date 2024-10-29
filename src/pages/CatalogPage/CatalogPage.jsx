@@ -272,7 +272,9 @@ function CatalogPage() {
               ></div>
               <div className="camper-details"><div>
                 <div className="camper-details-header">
-                  <h2>{camper.name}</h2><h2 className='camper-details-price'>€{camper.price.toFixed(2)}</h2>
+                  <h2>{camper.name}</h2><h2 className='camper-details-price'>€{`${camper.price.toFixed(2)} `}<svg className="icon">
+                <use xlinkHref={`${sprite}#icon-heart-default`} ></use>
+              </svg></h2>
                 </div>
                 
                 <p className="camper-ratings"><svg className="icon">
