@@ -4,13 +4,22 @@ button.search {
   width: 166px;
   height: 56px;
   background-color: var(--button);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button.search:hover {
   background-color: var(--button-hover);
 }
 
-button.load-more {
+button.loadMore {
 border: 1px solid var(--gray-light);
 border-radius: 200px;
 padding: 16px 32px;
@@ -18,10 +27,15 @@ width: 145px;
 height: 56px;
 margin-left: auto;
 margin-right: auto;
-
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: -0.01em;
+color: var(--main);
 }
 
-button.load-more:hover {
+button.loadMore:hover {
   border: 1px solid var(--button-hover);
 }
 

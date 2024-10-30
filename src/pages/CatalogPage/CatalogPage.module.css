@@ -1,15 +1,15 @@
 /* src/pages/CatalogPage.css */
-.catalog-page {
+.catalogPage {
   display: flex;
   padding-left: 5%;
   gap: 64px;
 }
-.camper-list {
+.camperList {
   display: flex;
     flex-direction: column;
     gap: 32px;
 }
-.camper-item {
+.camperItem {
   border: 1px solid var(--gray-light);
   border-radius: 20px;
   padding: 24px;
@@ -18,7 +18,7 @@
   display: flex;
   gap: 24px;
 }
-.camper-photo {
+.camperPhoto {
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
@@ -26,7 +26,7 @@
   width: 292px;
   height: 320px;
 }
-.single-line-ellipsis {
+.singleLineEllipsis {
   white-space: nowrap;    
   overflow: hidden;         
   text-overflow: ellipsis;  
@@ -37,27 +37,27 @@
   line-height: 150%;
   color: var(--text);
 }
-.camper-details {
+.camperDetails {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
 }
-.camper-details-header {
+.camperDetailsHeader {
   display: flex;
   width: 525px;
 }
-.camper-details-price {
+.camperDetailsPrice {
   margin-left: auto;
 }
-.camper-ratings {
+.camperRatings {
   display: flex;
 }
-.camper-ratings .icon:nth-child(3) {
+.camperRatings .icon:nth-child(3) {
   margin-left: 16px;
   margin-right: 4px;
 }
-.camper-ratings span {
+.camperRatings span {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
@@ -66,7 +66,7 @@
   text-decoration-skip-ink: none;
   color: var(--main);
 }
-.camper-features {
+.camperFeatures {
   list-style: none;
   padding: 0;
   margin: 10px 0;
@@ -76,7 +76,7 @@
   width: 527px;
 }
 
-.camper-features-item {
+.camperFeaturesItem {
   display: flex;
   border-radius: 100px;
   width: 143px;
@@ -89,8 +89,8 @@
   position: relative;
   margin-bottom: 5px;
 }
-.location-text,
-.filters-text {
+.locationText,
+.filtersText {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
@@ -99,7 +99,7 @@
   margin-bottom: 8px;
 }
 
-.location-detail {
+.locationDetail {
   display: flex;
   align-items: center;
   font-family: var(--font-family);
@@ -109,10 +109,10 @@
   color: var(--main);
 }
 
-.location-detail .icon {
+.locationDetail .icon {
   margin-right: 8px;
 }
-.location-filter {
+.locationFilter {
   border-radius: 5px;
   width: 300px;
   height: 42px;
@@ -125,7 +125,7 @@
   height: 24px;
   fill: var(--main); 
 }
-.icon-location {
+.iconLocation {
   position: absolute;
   left: 5%;
   top: 55%;
@@ -140,7 +140,7 @@
   padding-bottom: 8px;
 }
 
-.filter-buttons {
+.filterButtons {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -148,7 +148,7 @@
   margin-bottom: 32px;
 }
 
-.filter-button {
+.filterButton {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -166,19 +166,19 @@
   height: 96px;
 }
 
-.filter-button:hover {
+.filterButton:hover {
   border: 1px solid var(--button);
 }
-.filter-button.active {
+.filterButton.active {
   border: 1px solid var(--button);
 }
-.filter-button .icon {
+.filterButton .icon {
   width: 24px;
   height: 24px;
   margin-bottom: 8px;
 }
 
-.catalog-list {
+.catalogList {
   flex-grow: 1;
   padding: 20px;
 }
@@ -201,5 +201,30 @@
 }
 
 .search:hover {
+  background-color: var(--button-hover);
+}
+
+.showMoreButton {
+    font-size: 16px;
+    font-weight: 500;
+    background-color: var(--button);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 200px;
+    /* padding: 16px 60px; */
+    height: 56px;
+    flex-grow: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family);
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    width: 166px;
+}
+
+.showMoreButton:hover {
   background-color: var(--button-hover);
 }

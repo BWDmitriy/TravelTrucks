@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampers } from '../../redux/slice/campersSlice';
-import './CamperDetailPage.css';
+import styles from './CamperDetailPage.module.css';
 import sprite from '../../assets/symbol-defs.svg'
 
 
@@ -74,17 +74,17 @@ function CamperDetailPage() {
 
   const renderFeatures = () => (
     <div>
-      <ul className="camper-features">
+     <ul className={styles.camperFeatures}>
         {getFeatureList(camper).map((feature, index) => (
-                    <li className="camper-features-item" key={index}>
-                      <svg className="icon">
-                        <use xlinkHref={featureIcons[feature]}></use>
-                      </svg> {feature}
-                    </li>
-                  ))}
+          <li className={styles.camperFeaturesItem} key={index}>
+            <svg className={styles.icon}>
+              <use xlinkHref={featureIcons[feature]}></use>
+            </svg> {feature}
+          </li>
+        ))}
       </ul>
       <h3>Vehicle Details</h3>
-      <div className="vehicle-details">
+      <div className={styles.vehicleDetails}>
         <div>
           <p>Form
             </p>
@@ -117,11 +117,11 @@ function CamperDetailPage() {
   );
 
   const renderReviews = () => (
-    <div className="camper-reviews">
+    <div className={styles.camperReviews}>
       {(camper.reviews || []).map((review, index) => (
-        <div key={index} className="review">
-          <div className="review-header">
-            <img src={`https://via.placeholder.com/50`} alt={review.reviewer_name} className="reviewer-photo" />
+         <div key={index} className={styles.review}>
+          <div className={styles.reviewHeader}>
+            <img src={`https://via.placeholder.com/50`} alt={review.reviewer_name} className={styles.reviewerPhoto} />
             <div>
               <p>{review.reviewer_name}</p>
               <p>{'★'.repeat(review.reviewer_rating)}{'☆'.repeat(5 - review.reviewer_rating)}</p>
@@ -134,55 +134,56 @@ function CamperDetailPage() {
   );
 
   return (
-    <div className="camper-detail">
-      <h2>{camper.name}</h2><p className='camper-ratings'>
-        <svg className="icon">
+    <div className={styles.camperDetail}>
+      <h2>{camper.name}</h2>
+      <p className={styles.camperRatings}>
+        <svg className={styles.icon}>
                 <use xlinkHref={`${sprite}#icon-star-pressed`} ></use>
-                </svg> {camper.rating}({camper.reviews.length} Reviews) <svg className="icon">
+                </svg> {camper.rating}({camper.reviews.length} Reviews) <svg className={styles.icon}>
               <use xlinkHref={`${sprite}#icon-map`}></use>
                   </svg>{camper.location}</p>
-      <h2 className='camper-details-price'>€{camper.price.toFixed(2)}</h2>
+      <h2 className={styles.camperDetailsPrice}>€{camper.price.toFixed(2)}</h2>
       
       
-      <div className="camper-gallery">
+      <div className={styles.camperGallery}>
         {(camper.gallery || []).map((image, index) => (
           <div key={index}
-                className="camper-photo"
+                className={styles.camperPhoto}
                 style={{
                   backgroundImage: `url(${image.original})`
                 }}
               ></div>
         ))}
       </div>
-            <p className='camper-description'>{camper.description}</p>
+            <p className={styles.camperDescription}>{camper.description}</p>
 
-      <div className="tabs">
+      <div className={styles.tabs}>
         <button
-          className={`tab ${activeTab === 'features' ? 'active' : ''}`}
+          className={`${styles.tab} ${activeTab === 'features' ? styles.active : ''}`}
           onClick={() => setActiveTab('features')}
         >
           Features
         </button>
         <button
-          className={`tab ${activeTab === 'reviews' ? 'active' : ''}`}
+          className={`${styles.tab} ${activeTab === 'reviews' ? styles.active : ''}`}
           onClick={() => setActiveTab('reviews')}
         >
           Reviews
         </button>
       </div>
 
-      <div className="content-and-form">
-        <div className="tab-content">
+       <div className={styles.contentAndForm}>
+        <div className={styles.tabContent}>
           {activeTab === 'features' ? renderFeatures() : renderReviews()}
         </div>
-        <div className="booking-form">
+         <div className={styles.bookingForm}>
           <h2>Book your campervan now</h2>
           <p>Stay connected! We are always ready to help you.</p>
           <form>
             <input type="text" placeholder="Name*" />
             <input type="email" placeholder="Email*" />
             <input type="date" placeholder="Booking date*" />
-            <input type="text" placeholder="Comment*" className="comment-input" />
+            <input type="text" placeholder="Comment*" className={styles.commentInput} />
             <button type="submit">Send</button>
           </form>
         </div>

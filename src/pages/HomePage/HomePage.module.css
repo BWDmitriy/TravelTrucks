@@ -1,5 +1,5 @@
 /* src/pages/HomePage.css */
-.home-page {
+.homePage {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -14,11 +14,11 @@
   overflow-x: hidden;
 }
 
-.home-content {
+.homeContent {
   color: var(--inputs);
 }
 
-.home-content h1 {
+.homeContent h1 {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 48px;
@@ -26,7 +26,7 @@
   margin-bottom: 16px; /* Adjust spacing as needed */
 }
 
-.home-content h2 {
+.homeContent h2 {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 24px;
@@ -34,7 +34,7 @@
   margin-bottom: 32px; /* Adjust spacing as needed */
 }
 
-.view-now-button {
+.viewNowButton {
   font-size: 16px;
   font-weight: 500;
   background-color: var(--button);
@@ -52,6 +52,6 @@
   color: var(--white);
 }
 
-.view-now-button:hover {
+.viewNowButton:hover {
   background-color: var(--button-hover);
 }

@@ -1,12 +1,12 @@
 /* src/pages/CamperDetailPage.css */
-.camper-detail-page {
+.camperDetailPage {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
 }
 
-.camper-description {
+.camperDescription {
   flex-grow: 1;
   font-family: var(--font-family);
   font-weight: 400;
@@ -16,14 +16,14 @@
   margin-bottom: 60px;
 }
 
-.camper-header {
+.camperHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.camper-header h2,
-.camper-price {
+.camperHeader h2,
+.camperPrice {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 24px;
@@ -31,27 +31,27 @@
   color: var(--main);
 }
 
-.camper-rating-location {
+.camperRatingLocation {
   display: flex;
   gap: 20px;
   margin: 10px 0;
 }
 
-.camper-rating,
-.camper-location {
+.camperRating,
+.camperLocation {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-.camper-ratings {
+.camperRatings {
   display: flex;
   margin-bottom: 8px;
 }
-.camper-ratings .icon ~ .icon {
+.camperRatings .icon ~ .icon {
   margin-left: 16px;
   margin-right: 4px;
 }
-.camper-text {
+.camperText {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
@@ -60,7 +60,7 @@
   margin: 10px 0;
 }
 
-.show-more-button {
+.showMoreButton {
     font-size: 16px;
     font-weight: 500;
     background-color: var(--button);
@@ -81,23 +81,23 @@
     width: 166px;
 }
 
-.show-more-button:hover {
+.showMoreButton:hover {
   background-color: var(--button-hover);
 }
 
-.camper-detail {
+.camperDetail {
   padding: 20px;
   text-align: left;
 }
 
  
-.camper-image {
+.camperImage {
   width: 100%;
   max-width: 400px;
   height: auto;
 }
 
-.camper-gallery {
+.camperGallery {
   display: flex;
   flex-wrap: wrap;
   gap: 48px;
@@ -105,13 +105,13 @@
   margin-bottom: 28px;
 }
 
-.gallery-image {
+.galleryImage {
   max-width: 32%;
   height: 300px;
   border-radius: 5px;
 }
 
-.camper-detail {
+.camperDetail {
   padding: 20px;
 }
 
@@ -139,25 +139,22 @@
   background-color: #fff;
 }
 
-.tab-content {
+.tabContent {
   border-top: 1px solid #ddd;
   padding-top: 20px;
+  display: inline-block;
+    width: 49%;
+    margin-right: 5px;
 }
 
 
-
-.vehicle-details {
+.vehicleDetails {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.vehicle-details td {
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-
-.camper-reviews {
+.camperReviews {
   margin-top: 20px;
 }
 
@@ -167,20 +164,20 @@
   padding-bottom: 10px;
 }
 
-.review-header {
+.reviewHeader {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.reviewer-photo {
+.reviewerPhoto {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.tab-content {
+.tabContent {
   display: inline-block;
     width: 49%;
     margin-right: 5px;
@@ -200,24 +197,24 @@
   border-bottom: 2px solid transparent;
 }
 
-.content-and-form {
+.contentAndForm {
   display: flex;
   justify-content: space-between;
   gap: 40px;
 }
 
-.tab-content,
-.booking-form {
+.tabContent,
+.bookingForm {
   width: 49%;
 }
-.booking-form {
+.bookingForm {
   border: 1px solid var(--gray-light);
 border-radius: 10px;
 padding: 44px;
 width: 641px;
 height: 588px;
 }
-.booking-form h2 {
+.bookingForm h2 {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 20px;
@@ -225,7 +222,7 @@ height: 588px;
   color: var(--main);
 }
 
-.booking-form p {
+.bookingForm p {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
@@ -233,7 +230,7 @@ height: 588px;
   color: var(--gray);
 }
 
-.booking-form input {
+.bookingForm input {
   display: block;
   border-radius: 12px;
   margin-bottom: 10px;
@@ -243,7 +240,7 @@ height: 588px;
   border: none;
 }
 
-.booking-form input::placeholder {
+.bookingForm input::placeholder {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
@@ -251,12 +248,12 @@ height: 588px;
   color: var(--gray);
 }
 
-.booking-form .comment-input {
+.bookingForm .commentInput {
   height: 118px; 
   border-radius: 10px;
 }
 
-.booking-form button {
+.bookingForm button {
   display: block;
   margin: 0 auto;
   width: 166px;
@@ -269,21 +266,21 @@ height: 588px;
   cursor: pointer;
 }
 
-.booking-form button:hover {
+.bookingForm button:hover {
   background-color: var(--button-hover);
 }
 
-.booking-form > p {
+.bookingForm > p {
   margin-bottom: 24px;
 }
 
-.vehicle-details > div {
+.vehicleDetails > div {
   padding: 10px;
   display: flex;
   justify-content: space-between;
 }
 
-.vehicle-details > div p {
+.vehicleDetails > div p {
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
@@ -291,4 +288,47 @@ height: 588px;
   text-align: center;
   color: var(--main);
 }
+
+.camperPhoto {
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  width: 292px;
+  height: 320px;
+}
+
+.camperFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  width: 527px;
+}
+
+.camperFeaturesItem {
+  display: flex;
+  border-radius: 100px;
+  width: 143px;
+  height: 48px;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--main); 
+}
+
+
+
+
+
+
+
+
 

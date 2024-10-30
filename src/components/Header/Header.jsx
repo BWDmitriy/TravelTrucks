@@ -1,22 +1,22 @@
-// src/components/Header.jsx
+// src/components/Header/Header.jsx
 import { NavLink } from 'react-router-dom';
-import './Header.css';
-import Logo from '../../assets/TravelTrucks.svg'; // Adjust the path if necessary
+import styles from './Header.module.css';
+import Logo from '../../assets/TravelTrucks.svg';
 
 function Header() {
   return (
-    <div className="header">
-      <img src={Logo} alt="TravelTrucks Logo" className="header-logo" />
-      <nav className="header-nav">
+    <div className={styles.header}>
+      <img src={Logo} alt="TravelTrucks Logo" className={styles.headerLogo} />
+      <nav className={styles.headerNav}>
         <NavLink
           to="/"
-          className={({ isActive }) => `header-link ${isActive ? 'active' : ''}`}
+          className={({ isActive }) => `${styles.headerLink} ${isActive ? styles.active : ''}`}
         >
           Home
         </NavLink>
         <NavLink
           to="/catalog"
-          className={({ isActive }) => `header-link ${isActive ? 'active' : ''}`}
+          className={({ isActive }) => `${styles.headerLink} ${isActive ? styles.active : ''}`}
         >
           Catalog
         </NavLink>

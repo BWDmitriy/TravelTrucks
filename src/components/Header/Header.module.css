@@ -1,5 +1,4 @@
-/* src/components/Header.css */
-
+/* src/components/Header/Header.module.css */
 .header {
   border-bottom: 1px solid var(--badges);
   width: 1440px; 
@@ -10,19 +9,19 @@
   position: relative;
 }
 
-.header-logo {
+.headerLogo {
   position: absolute;
   left: 5%;
 }
 
-.header-nav {
+.headerNav {
   display: flex;
   gap: 20px; 
   margin-left: auto;
   margin-right: auto;
 }
 
-.header-link {
+.headerLink {
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
@@ -33,15 +32,11 @@
   padding: 10px;
 }
 
-.header-link:hover {
+.headerLink:hover {
   color: var(--button-hover);
 }
 
-.active-link {
-  color: var(--button-hover);
-}
-
-.header-link.active {
+.active {
   font-weight: bold;
   color: var(--button-hover);
 }
