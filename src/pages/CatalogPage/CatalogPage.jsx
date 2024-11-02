@@ -83,6 +83,7 @@ function CatalogPage() {
     Water: `${sprite}#icon-ion_water-outline`,
     'Automatic': `${sprite}#icon-diagram`,
     'Petrol': `${sprite}#icon-fuel-pump`,
+    'Diesel': `${sprite}#icon-fuel-pump`
   };
 
   const getFeatureList = (camper) => {
@@ -103,6 +104,10 @@ function CatalogPage() {
 
     if (camper.engine === 'petrol') {
       features.push('Petrol');
+    }
+
+     if (camper.engine === 'diesel') {
+      features.push('Diesel');
     }
 
     return features;
