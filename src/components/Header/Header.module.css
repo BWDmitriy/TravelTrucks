@@ -1,7 +1,7 @@
 /* src/components/Header/Header.module.css */
 .header {
   border-bottom: 1px solid var(--badges);
-  width: 1440px; 
+  width: 100vw; 
   height: 72px;
   background-color: var(--inputs);
   display: flex;

@@ -81,8 +81,8 @@ function CatalogPage() {
     Microwave: `${sprite}#icon-lucide_microwave`,
     Gas: `${sprite}#icon-hugeicons_gas-stove`,
     Water: `${sprite}#icon-ion_water-outline`,
-    'Automatic Transmission': `${sprite}#icon-diagram`,
-    'Petrol Engine': `${sprite}#icon-fuel-pump`,
+    'Automatic': `${sprite}#icon-diagram`,
+    'Petrol': `${sprite}#icon-fuel-pump`,
   };
 
   const getFeatureList = (camper) => {
@@ -98,11 +98,11 @@ function CatalogPage() {
     });
 
     if (camper.transmission === 'automatic') {
-      features.push('Automatic Transmission');
+      features.push('Automatic');
     }
 
     if (camper.engine === 'petrol') {
-      features.push('Petrol Engine');
+      features.push('Petrol');
     }
 
     return features;
